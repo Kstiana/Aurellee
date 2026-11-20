@@ -1,5 +1,5 @@
 import { BRAND, ROUTES, SEO } from "./config.js";
-import { IMG, pexelsUrl } from "../data/images.js";
+import { IMG } from "../data/images.js";
 import { hasPriceRange, maxPrice, minPrice, productImages, categoryName } from "../services/catalog.js";
 
 const absolute = (path) => (/^https?:/.test(path) ? path : `${BRAND.siteUrl}${path.startsWith("/") ? path : `/${path}`}`);
@@ -24,7 +24,7 @@ const property = (name, content) =>
 export function applySEO({ title, description, path, image, type = "website", noindex = false }) {
   const fullTitle = title.includes(SEO.titleSuffix) ? title : `${title} | ${SEO.titleSuffix}`;
   const url = absolute(path || window.location.pathname);
-  const picture = image || pexelsUrl(IMG.og.id, 1200);
+  const picture = image || IMG.og.id;
 
   document.title = fullTitle;
   meta("description", description);
@@ -69,7 +69,7 @@ export function breadcrumbLD(trail) {
 }
 
 export function productLD(product) {
-  const images = productImages(product).map((slot) => pexelsUrl(slot.id, 1200));
+  const images = productImages(product).map((slot) => slot.id);
   const offer = hasPriceRange(product)
     ? {
         "@type": "AggregateOffer",
