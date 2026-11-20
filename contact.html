@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contact AURELLE</title>
+  <meta name="description" content="Get in touch with AURELLE by WhatsApp, email or the contact form. We reply to every message.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#F8F1EF">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://aurelle.netlify.app/contact">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23493634'/%3E%3Cpath d='M20 45 32 19l12 26M25.5 37h13' fill='none' stroke='%23F8F1EF' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <meta property="og:site_name" content="AURELLE">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact AURELLE">
+  <meta property="og:description" content="Get in touch with AURELLE by WhatsApp, email or the contact form. We reply to every message.">
+  <meta property="og:url" content="https://aurelle.netlify.app/contact">
+  <meta property="og:image" content="https://images.pexels.com/photos/3065171/pexels-photo-3065171.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact AURELLE">
+  <meta name="twitter:description" content="Get in touch with AURELLE by WhatsApp, email or the contact form. We reply to every message.">
+  <meta name="twitter:image" content="https://images.pexels.com/photos/3065171/pexels-photo-3065171.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');try{var p=location.pathname;if((p==='/'||p==='/index.html')&&!sessionStorage.getItem('aurelle.preloader.v1')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('needs-loader')}}catch(e){}if(/[?&]imgcheck/.test(location.search)){document.documentElement.classList.add('imgcheck')}</script>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/pages/editorial.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script type="module" src="/js/pages/support.js"></script>
+</head>
+<body data-page="contact">
+<noscript><p class="demo-notice" style="margin:6rem 1rem 1rem"><span>JavaScript is needed to browse the collection, use the bag and send orders. Please enable it, or contact us at kstiana1@gmail.com.</span></p></noscript>
+<main id="main">
+  <section class="contact-hero">
+    <div class="container">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumbs"><li><a href="/">Home</a></li><li><span aria-current="page">Contact</span></li></ol></nav>
+      <h1 class="t-display" data-lines data-hero style="margin-top:var(--space-m)"><span data-line>Say hello.</span></h1>
+      <p class="t-lead" data-reveal="up" data-hero style="--delay:300ms;margin-top:var(--space-m)">Questions about a product, an order or a length? We would love to hear from you.</p>
+    </div>
+  </section>
+  <section class="container contact-grid">
+    <div class="contact-cards" data-contact-cards></div>
+    <form class="contact-form" name="contact" method="post" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate data-contact-form>
+      <input type="hidden" name="form-name" value="contact">
+      <p class="visually-hidden" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <h2 class="t-heading">Send us a message</h2>
+      <div class="contact-form__row">
+        <div class="field"><label class="field__label" for="c-name">Your name</label><input class="field__input" id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-error"><p class="field__error" id="c-name-error" role="alert"></p></div>
+        <div class="field"><label class="field__label" for="c-email">Email address</label><input class="field__input" id="c-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="c-email-error"><p class="field__error" id="c-email-error" role="alert"></p></div>
+      </div>
+      <div class="field"><label class="field__label" for="c-topic">What is it about?</label>
+        <select class="field__select" id="c-topic" name="topic"><option>An order enquiry</option><option>A product question</option><option>Wigs and extensions</option><option>Something else</option></select>
+      </div>
+      <div class="field"><label class="field__label" for="c-message">Message</label><textarea class="field__textarea" id="c-message" name="message" required aria-describedby="c-message-error" maxlength="1500"></textarea><p class="field__error" id="c-message-error" role="alert"></p></div>
+      <label class="check"><input type="checkbox" name="consent" value="yes" required><span>I agree that AURELLE may use these details to reply to me. See the <a class="link" href="/privacy">privacy policy</a>.</span></label>
+      <div class="form-status" role="status" data-status hidden></div>
+      <button class="btn" type="submit" data-submit style="justify-self:start"><span class="btn__label">Send message</span></button>
+    </form>
+  </section>
+</main>
+<div data-footer-root></div>
+</body>
+</html>

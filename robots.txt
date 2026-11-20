@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cart
+
+Sitemap: https://aurelle.netlify.app/sitemap.xml
