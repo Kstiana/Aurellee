@@ -1,0 +1,241 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 400;
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  font-optical-sizing: auto;
+}
+
+h5,
+h6 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+em,
+.italic {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 500;
+}
+
+.t-hero {
+  font-family: var(--font-display);
+  font-size: var(--step-7);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+.t-display {
+  font-family: var(--font-display);
+  font-size: var(--step-6);
+  font-weight: 300;
+  line-height: 0.96;
+  letter-spacing: -0.028em;
+}
+
+.t-title {
+  font-family: var(--font-display);
+  font-size: var(--step-5);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.022em;
+}
+
+.t-heading {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.018em;
+}
+
+.t-subheading {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.t-lead {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 400;
+  line-height: 1.38;
+  max-width: 34ch;
+}
+
+.t-body {
+  font-size: var(--step-0);
+  line-height: 1.7;
+  color: var(--text-soft);
+  max-width: 56ch;
+}
+
+.t-small {
+  font-size: var(--step--1);
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+
+.t-caption {
+  font-size: var(--step--2);
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+}
+
+.t-label {
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-soft);
+}
+
+.t-price {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: 0;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.on-dark {
+  color: var(--text-on-dark);
+}
+
+.on-dark .t-body,
+.on-dark .t-small,
+.on-dark .t-label {
+  color: var(--text-on-dark-soft);
+}
+
+.on-dark .t-caption {
+  color: var(--text-on-dark-soft);
+}
+
+.prose {
+  max-width: var(--container-text);
+}
+
+.prose > * + * {
+  margin-top: 1.15em;
+}
+
+.prose h2 {
+  font-size: var(--step-4);
+  margin-top: 1.9em;
+  line-height: 1.08;
+}
+
+.prose h3 {
+  font-size: var(--step-3);
+  margin-top: 1.6em;
+  line-height: 1.12;
+}
+
+.prose p,
+.prose li {
+  font-size: var(--step-1);
+  line-height: 1.78;
+  color: var(--text-soft);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25em;
+  list-style: revert;
+}
+
+.prose li + li {
+  margin-top: 0.5em;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-decoration-color: var(--rose);
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+  color: var(--text);
+}
+
+.prose a:hover {
+  text-decoration-color: var(--mocha);
+}
+
+.prose blockquote {
+  margin: 2em 0;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--rose);
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1.25;
+  font-style: italic;
+  color: var(--text);
+}
+
+.prose strong {
+  color: var(--text);
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+  padding-bottom: 0.15em;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right center;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.link:hover::after,
+.link:focus-visible::after {
+  transform: scaleX(0);
+  transform-origin: right center;
+  animation: link-redraw var(--dur-slow) var(--ease-out) var(--dur-fast) forwards;
+}
+
+@keyframes link-redraw {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}

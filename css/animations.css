@@ -1,0 +1,277 @@
+.js [data-reveal] {
+  opacity: 0;
+  transition: opacity 1s var(--ease-out), transform 1.2s var(--ease-out), clip-path 1.4s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 90ms + var(--delay, 0ms));
+  will-change: opacity, transform;
+}
+
+.js [data-reveal="up"],
+.js [data-reveal=""] {
+  transform: translateY(2.25rem);
+}
+
+.js [data-reveal="fade"] {
+  transform: none;
+}
+
+.js [data-reveal="scale"] {
+  transform: scale(0.94);
+}
+
+.js [data-reveal="left"] {
+  transform: translateX(-2.5rem);
+}
+
+.js [data-reveal="right"] {
+  transform: translateX(2.5rem);
+}
+
+.js [data-reveal="arch"] {
+  opacity: 1;
+  clip-path: inset(100% 0 0 0 round 50% 50% 0 0 / 30% 30% 0 0);
+  transform: none;
+}
+
+.js [data-reveal="rise"] {
+  opacity: 1;
+  clip-path: inset(100% 0 0 0);
+  transform: none;
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+.js [data-reveal="arch"].is-visible {
+  clip-path: inset(0 0 0 0 round 0);
+}
+
+.js [data-reveal="rise"].is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+.js [data-reveal] > .media > img,
+.js [data-reveal-zoom] img {
+  transform: scale(1.18);
+  transition: transform 1.8s var(--ease-out), opacity var(--dur-slow) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 90ms + var(--delay, 0ms));
+}
+
+.js [data-reveal].is-visible > .media > img,
+.js [data-reveal-zoom].is-visible img {
+  transform: scale(1);
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
+.line__inner {
+  display: block;
+  will-change: transform;
+}
+
+.js [data-lines] .line__inner {
+  transform: translateY(112%) rotate(2.5deg);
+  transform-origin: left bottom;
+  transition: transform 1.25s var(--ease-out);
+  transition-delay: calc(var(--delay, 0ms) + var(--li, 0) * 110ms);
+}
+
+.js [data-lines].is-visible .line__inner {
+  transform: none;
+}
+
+.js [data-lines] {
+  opacity: 1;
+}
+
+[data-words] .word {
+  display: inline-block;
+  opacity: var(--wo, 0.16);
+  transition: opacity 0.35s var(--ease-soft);
+}
+
+.no-js [data-words] .word {
+  opacity: 1;
+}
+
+.hero-arch {
+  clip-path: inset(0 0 0 0 round 50% 50% 0 0 / 40% 40% 0 0);
+}
+
+.js .hero-arch {
+  clip-path: inset(100% 0 0 0 round 50% 50% 0 0 / 40% 40% 0 0);
+}
+
+.js.is-ready .hero-arch {
+  animation: arch-open 1.8s var(--ease-in-out) 0.1s both;
+}
+
+.js.is-ready .hero-arch img {
+  animation: hero-settle 2.6s var(--ease-out) 0.1s both;
+}
+
+.parallax {
+  transform: translate3d(0, var(--py, 0px), 0);
+  will-change: transform;
+}
+
+.parallax-img {
+  height: 120%;
+  width: 100%;
+  object-fit: cover;
+  transform: translate3d(0, var(--py, 0px), 0);
+  will-change: transform;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--space-l);
+}
+
+.marquee__track {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-l);
+  min-width: 100%;
+  animation: marquee-run 38s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--rose);
+  flex: none;
+}
+
+.float {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+.float--slow {
+  animation-duration: 10s;
+  animation-delay: -3s;
+}
+
+.draw-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--draw, 0));
+}
+
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid currentColor;
+  opacity: 0;
+  animation: ring-out 2.8s var(--ease-out) infinite;
+}
+
+.page-enter {
+  animation: page-enter 0.9s var(--ease-out) 0.1s both;
+}
+
+@keyframes arch-open {
+  from {
+    clip-path: inset(100% 0 0 0 round 50% 50% 0 0 / 40% 40% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 50% 50% 0 0 / 40% 40% 0 0);
+  }
+}
+
+@keyframes hero-settle {
+  from {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes marquee-run {
+  to {
+    transform: translateX(calc(-100% - var(--space-l)));
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.6rem);
+  }
+}
+
+@keyframes ring-out {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal],
+  .js [data-reveal] > .media > img,
+  .js [data-lines] .line__inner {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  [data-words] .word {
+    opacity: 1 !important;
+  }
+
+  .marquee__track,
+  .float,
+  .pulse-ring::after {
+    animation: none !important;
+  }
+
+  .loader,
+  .curtain {
+    display: none !important;
+  }
+
+  .parallax,
+  .parallax-img {
+    transform: none !important;
+  }
+}
